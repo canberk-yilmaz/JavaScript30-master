@@ -1,5 +1,9 @@
 ﻿![](https://javascript30.com/images/JS3-social-share.png)
 
+# Bu Repoda Master dosyalar ve benim öğrenip kodladığım dosyalar bulunmaktadır.
+
+Başlangıç dosyaları kopyalanıp dosya ismi değiştirilip çalışmalar bu dosyada yapılmıştır.
+
 # JavaScript30
 
 Starter Files + Completed solutions for the JavaScript 30 Day Challenge.
