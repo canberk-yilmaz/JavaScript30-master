@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Console Tricks!</title>
+  </head>
+  <body>
+    <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+    <script>
+      const dogs = [
+        { name: "Snickers", age: 2 },
+        { name: "hugo", age: 8 },
+      ];
+
+      function makeGreen() {
+        const p = document.querySelector("p");
+        p.style.color = "#BADA55";
+        p.style.fontSize = "50px";
+      }
+
+      // On Chrome Dev Tools when you right click element and select 'Break On' / 'Attribute Modification' you will see in code that makes the changes. Debugger will work.
+
+      // Regular
+
+      console.log("Hello");
+      // Interpolated
+      console.log("This Is An %s String!", "Interpolated");
+
+      console.log(`First dogs name is ${dogs[0].name}!`);
+
+      // Styled
+
+      console.log(
+        "%c This Is a Big Text",
+        "font-size: 40px; color:blue; background: red; text-shadow: 10px 10px 0 aqua"
+      );
+
+      // warning!
+      console.warn("Console Dot Warning");
+      // Error :|
+      console.error("Console Dot Error");
+      // Info
+      console.info(
+        "Like humans, koalas actually have unique individual fingerprints."
+      );
+      // Testing
+      console.assert(1 == "1", "That is wrong");
+      // clearing
+      //console.clear();
+      // Viewing DOM Elements
+      const p = document.querySelector("p");
+
+      console.log(p);
+      // Grouping together
+      dogs.forEach((dog) => {
+        console.groupCollapsed(`${dog.name}`);
+        console.log(`This is ${dog.name}`);
+        console.log(`${dog.name} is ${dog.age} years old.`);
+        console.log(`${dog.name} is ${dog.age * 7} human years old.`);
+        console.groupEnd(`${dog.name}`);
+      });
+      // counting
+      console.count("Canberk");
+      console.count("Yilmaz");
+      console.count("Yilmaz");
+      console.count("Canberk");
+      console.count("Canberk");
+      console.count("Yilmaz");
+      console.count("Canberk");
+      console.count("Canberk");
+      console.count("Yilmaz");
+      console.count("Yilmaz");
+      console.count("Yilmaz");
+      // timing
+
+      console.time("fetching data");
+      fetch("https://api.github.com/users/canberk-yilmaz")
+        .then((data) => data.json())
+        .then((data) => {
+          console.timeEnd("fetching data");
+          console.log(data);
+        });
+
+      console.table(dogs);
+    </script>
+  </body>
+</html>
